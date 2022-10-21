@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class check_count
+{
+ public:
+ int count_plus;
+ int count_minus;
+ check_count()
+ {
+ count_plus = 0;
+ count_minus = 2;
+ };
+ void operator ++() { ++count_plus; }
+ void operator --() { --count_minus; }
+};
+int main()
+{
+ check_count x, y;
+ cout << "x =" << x.count_plus<<"\n";
+ cout <<"y =" << y.count_minus<<"\n";
+ ++x;
+ --y;
+ cout<<"\nAfter increment/decrement\n";
+ cout<<"x ="<<x.count_plus<<"\n";
+ cout<<"y ="<<y.count_minus<<"\n";
+return 0;
+}
